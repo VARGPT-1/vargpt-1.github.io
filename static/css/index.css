@@ -131,9 +131,17 @@ body {
 .interpolation-panel {
   background: #f5f5f5;
   border-radius: 10px;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 (如果需要) */
 }
 
 .interpolation-panel .interpolation-image {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.interpolation-panel .interpolation-image-2 {
   width: 100%;
   border-radius: 5px;
 }
