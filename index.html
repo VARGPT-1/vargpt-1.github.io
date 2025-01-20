@@ -42,45 +42,7 @@
 
 <body>
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <a class="navbar-item" href="https://keunhong.com">
-          <span class="icon">
-            <i class="fas fa-home"></i>
-          </span>
-        </a>
 
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More Research
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://hypernerf.github.io">
-              HyperNeRF
-            </a>
-            <a class="navbar-item" href="https://nerfies.github.io">
-              Nerfies
-            </a>
-            <a class="navbar-item" href="https://latentfusion.github.io">
-              LatentFusion
-            </a>
-            <a class="navbar-item" href="https://photoshape.github.io">
-              PhotoShape
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </nav>
 
 
   <section class="hero">
@@ -93,17 +55,29 @@
               Multimodal Large Language Model</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://keunhong.com">Xianwei Zhuang</a><sup>1</sup>,</span>
+                <a href="https://keunhong.com">Xianwei Zhuang</a><sup>*</sup>,</span>
               <span class="author-block">
-                <a href="https://utkarshsinha.com">Yuxin Xie</a><sup>1</sup>,</span>
+                <a href="https://utkarshsinha.com">Yuxin Xie</a><sup>*</sup>,</span>
               <span class="author-block">
-                <a href="https://jonbarron.info">Yuexian Zou</a><sup>1</sup>,
+                <a href="https://utkarshsinha.com">Yufan Deng</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://utkarshsinha.com">Liming Liang</a>,</span>
+              <span class="author-block">
+                <a href="https://utkarshsinha.com">Jinghan Ru</a>,</span>
+              <span class="author-block">
+                <a href="https://utkarshsinha.com">Yuguo Yin</a>,</span>
+              <span class="author-block">
+                <a href="https://jonbarron.info">Yuexian Zou</a><sup>†</sup>,
               </span>
             </div>
-
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Peking University</span>
+              <span class="author-block">Peking University</span>
             </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block">xwzhuang@stu.pku.edu.cn</span>
+            </div>
+
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -168,35 +142,47 @@
       <!-- Animation. -->
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Animation</h2>
+          <h2 class="title is-3">Abilities</h2>
 
           <!-- Interpolating. -->
-          <h3 class="title is-4">Interpolating states</h3>
+          <h3 class="title is-4">Comparative analysis</h3>
           <div class="content has-text-justified">
             <p>
-              We can also animate the scene by interpolating the deformation latent codes of two input
-              frames. Use the slider here to linearly interpolate between the left frame and the right
-              frame.
+              A comparative analysis of various MLLMs across multi-
+              ple visual comprehension and generation benchmarks is presented.
+              The CLIP-scores is employed as a text-to-image visual genera-
+              tion metric, while the remaining metrics are derived from stan-
+              dard visual question-answering benchmarks and multi-modal com-
+              prehension benchmarks. Notably, our VARGPT model demon-
+              strates significant superiority over the compared baselines across
+              all comprehension benchmarks. Furthermore, it exhibits excep-
+              tional instruction-to-image generation capabilities, thus enhancing
+              its versatility and applicability in diverse visual-linguistic tasks.
             </p>
           </div>
           <div class="columns is-vcentered interpolation-panel">
-            <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_start.jpg" class="interpolation-image"
-                alt="Interpolate start reference image." />
-              <p>Start Frame</p>
-            </div>
-
-            <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_end.jpg" class="interpolation-image"
-                alt="Interpolation end reference image." />
-              <p class="is-bold">End Frame</p>
-            </div>
+            <img src="./static/vargpt_images/vargptintro-methods.jpg" class="interpolation-image"
+              alt="Interpolate start reference image." />
           </div>
-          <br />
-          <!--/ Interpolating. -->
 
+          <h3 class="title is-4">Generated samples</h3>
+          <div class="content has-text-justified">
+            <p>
+              Some generated 256×256 samples by VARGPT trained on ImageNet-1K. VARGPT supports text-and-image
+              instructions from
+              user and outputs both text-and-image mixed modal data simultaneously.
+            </p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/VARGPT-vis.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
+          </div>
         </div>
+        <br />
+        <!--/ Interpolating. -->
+
       </div>
+    </div>
     </div>
   </section>
 
@@ -213,16 +199,19 @@
               We present VARGPT, a novel multimodal large language model (MLLM) that unifies visual understanding and
               generation within a single autoregressive framework. VARGPT employs a next-token prediction paradigm for
               visual understanding and a next-scale prediction paradigm for visual autoregressive generation. Building
-              upon the LLaVA architecture, VARGPT incorporates a visual decoder and VAE decoders, along with two feature
-              mappers for generative token input-output for extending MLLMs to visual autoregressive generation
-              efficiently. Our VARGPT is trained through a three-stage pipeline on three specially curated datasets,
-              including a pre-training phase and two mixed visual instruction fine-tuning stages to achieve alignment
-              between visual and textual features, improve understanding and generation instruction following, and
-              enhance visual generation quality. Despite its LLAVA-based architecture for multimodel understanding,
-              VARGPT significantly outperforms LLaVA-1.5 on various vision-centric benchmarks, such as visual
-              question-answering and reasoning tasks. Notably, VARGPT also demonstrates remarkable capabilities in
-              autoregressive visual generation and text-to-image synthesis, showcasing its versatility in both visual
-              understanding and generation tasks.
+              upon the LLaVA architecture, VARGPT incorporates a visual decoder and a multi-scale image tokenizer, along
+              with two feature projectors for efficiently extending MLLMs to visual autoregressive generation and
+              inherently support mixed-modal input and output.
+              Our VARGPT undergoes a three-stage unified training process on three specially curated datasets,
+              encompassing a pre-training phase and two mixed visual instruction fine-tuning phases.
+              The unified training strategy are designed to achieve alignment between visual and textual features,
+              enhance instruction following for both understanding and generation, and improve visual generation
+              quality, respectively.
+              Despite its LLAVA-based architecture for multimodel understanding, VARGPT significantly outperforms
+              LLaVA-1.5 on various vision-centric benchmarks, such as visual question-answering and reasoning tasks.
+              Notably, VARGPT also demonstrates remarkable capabilities in visual autoregressive generation and
+              instruction-to-image synthesis, showcasing its versatility in both visual understanding and generation
+              tasks.
             </p>
           </div>
         </div>
@@ -251,78 +240,152 @@
       <!-- Animation. -->
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Animation</h2>
+          <h2 class="title is-3">Methodology</h2>
 
           <!-- Interpolating. -->
-          <h3 class="title is-4">Interpolating states</h3>
+          <h3 class="title is-4">Model Architecture</h3>
           <div class="content has-text-justified">
             <p>
-              We can also animate the scene by interpolating the deformation latent codes of two input
-              frames. Use the slider here to linearly interpolate between the left frame and the right
-              frame.
+              The illustration of the proposed VARGPT framework, which consists of (1) a large language model, visual
+              encoder and a
+              understanding projector for visual understanding; (2) a visual decoder and dual generation projectors for
+              visual generation. VARGPT
+              employs the employs causal attention in the Large Language Model (LLM) backbone, while utilizing chunked
+              causal attention in the visual
+              decoder.
             </p>
           </div>
           <div class="columns is-vcentered interpolation-panel">
-            <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_start.jpg" class="interpolation-image"
-                alt="Interpolate start reference image." />
-              <p>Start Frame</p>
-            </div>
-            <div class="column interpolation-video-column">
-              <div id="interpolation-image-wrapper">
-                Loading...
-              </div>
-              <input class="slider is-fullwidth is-large is-info" id="interpolation-slider" step="1" min="0" max="100"
-                value="0" type="range">
-            </div>
-            <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_end.jpg" class="interpolation-image"
-                alt="Interpolation end reference image." />
-              <p class="is-bold">End Frame</p>
-            </div>
+            <img src="./static/vargpt_images/VARGPT-main.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
           </div>
-          <br />
-          <!--/ Interpolating. -->
 
-        </div>
-      </div>
-      <!--/ Animation. -->
-
-
-      <!-- Concurrent Work. -->
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Related Links</h2>
-
+          <h3 class="title is-4">Training</h3>
           <div class="content has-text-justified">
             <p>
-              There's a lot of excellent work that was introduced around the same time as ours.
-            </p>
-            <p>
-              <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an
-              idea similar to our windowed position encoding for coarse-to-fine optimization.
-            </p>
-            <p>
-              <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a
-                href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-              both use deformation fields to model non-rigid scenes.
-            </p>
-            <p>
-              Some works model videos with a NeRF by directly modulating the density, such as <a
-                href="https://video-nerf.github.io/">Video-NeRF</a>, <a
-                href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a
-                href="https://neural-3d-video.github.io/">DyNeRF</a>
-            </p>
-            <p>
-              There are probably many more by the time you are reading this. Check out <a
-                href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a
-                href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+              The three training pipeline of the VARGPT, including stage-1 pretraining, stage-2 and stage-3 instruction
+              fine-tuning.
             </p>
           </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/VARGPT-training.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
+          </div>
         </div>
-      </div>
-      <!--/ Concurrent Work. -->
+        <br />
+        <!--/ Interpolating. -->
 
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Data</h2>
+
+          <!-- Interpolating. -->
+          <h3 class="title is-4">Data proportion in the three training stages.</h3>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/PieChart2.jpg" class="interpolation-image"
+              alt="Interpolate start reference image." />
+          </div>
+
+          <h3 class="title is-4">Data distribution of the mixed instruction fine-tuning dataset.</h3>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/PieChart.jpg" class="interpolation-image"
+              alt="Interpolate start reference image." />
+          </div>
+        </div>
+        <br />
+        <!--/ Interpolating. -->
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Experiments</h2>
+
+          <!-- Interpolating. -->
+          <h3 class="title is-4">Zero-shot multi-modal evaluation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Zero-shot multi-modal evaluation on multi-modal benchmarks including MMMU, MME, MMBench, SEEDBench, and
+              POPE (including different settings random, popular and adversarial ). The overall scores are reported for
+              evaluation and we report test results for MMBench. Gen represents whether the method supports image
+              generation capability. VARGPT achieves the best overall performance.
+            </p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/experiment1.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
+          </div>
+
+          <h3 class="title is-4">Performance comparison on visual question answering tasks.</h3>
+          <div class="content has-text-justified">
+            <p>
+              Performance comparison on visual question answering tasks. We gray out the model has trained on the
+              dataset. Gen represents
+              whether the method supports image generation capability.
+            </p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/experiment2.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
+          </div>
+        </div>
+        <br />
+        <!--/ Interpolating. -->
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">More generated samples</h2>
+
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/VARGPT-exp-vis.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/VARGPT-appendix-gen-1_page_1.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <img src="./static/vargpt_images/VARGPT-appendix-gen-2_page_1.jpg" class="interpolation-image-2"
+              alt="Interpolate start reference image." />
+          </div>
+
+        </div>
+        <br />
+        <!--/ Interpolating. -->
+
+      </div>
+
+
+    </div>
     </div>
   </section>
 
