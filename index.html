@@ -56,19 +56,25 @@
               Multimodal Large Language Model</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://keunhong.com">Xianwei Zhuang</a><sup>*</sup>,</span>
+                <a=>Xianwei Zhuang</a=><sup>*</sup>,
+              </span>
               <span class="author-block">
-                <a href="https://utkarshsinha.com">Yuxin Xie</a><sup>*</sup>,</span>
+                <a=>Yuxin Xie</a=><sup>*</sup>,
+              </span>
               <span class="author-block">
-                <a href="https://utkarshsinha.com">Yufan Deng</a><sup>*</sup>,</span>
+                <a=>Yufan Deng</a=><sup>*</sup>,
+              </span>
               <span class="author-block">
-                <a href="https://utkarshsinha.com">Liming Liang</a>,</span>
+                <a=>Liming Liang</a=>,
+              </span>
               <span class="author-block">
-                <a href="https://utkarshsinha.com">Jinghan Ru</a>,</span>
+                <a=>Jinghan Ru</a=>,
+              </span>
               <span class="author-block">
-                <a href="https://utkarshsinha.com">Yuguo Yin</a>,</span>
+                <a=>Yuguo Yin</a=>,
+              </span>
               <span class="author-block">
-                <a href="https://jonbarron.info">Yuexian Zou</a><sup>†</sup>,
+                <a=>Yuexian Zou</a=><sup>†</sup>,
               </span>
             </div>
             <div class="is-size-5 publication-authors">
@@ -83,7 +89,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- PDF Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -98,10 +104,10 @@
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span>
+                </span> -->
                 <!-- Video Link. -->
                 <span class="link-block">
-                  <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                  <a href="https://www.youtube.com/watch?v=CO5fzwJ_B3k"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -111,7 +117,8 @@
                 </span>
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/google/nerfies" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/VARGPT-family/VARGPT"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -119,14 +126,26 @@
                   </a>
                 </span>
                 <!-- Dataset Link. -->
+
                 <span class="link-block">
-                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                  <a href="https://huggingface.co/datasets/VARGPT-family/VARGPT_datasets"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="far fa-images"></i>
+                      <i class="far fa-image"></i>
                     </span>
                     <span>Data</span>
                   </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/VARGPT-family/VARGPT_LLaVA-v1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-image"></i>
+                    </span>
+                    <span>Model</span>
+                  </a>
+                </span>
               </div>
 
             </div>
@@ -149,16 +168,13 @@
           <h3 class="title is-4">Comparative analysis</h3>
           <div class="content has-text-justified">
             <p>
-              A comparative analysis of various MLLMs across multi-
-              ple visual comprehension and generation benchmarks is presented.
-              The CLIP-scores is employed as a text-to-image visual genera-
-              tion metric, while the remaining metrics are derived from stan-
-              dard visual question-answering benchmarks and multi-modal com-
-              prehension benchmarks. Notably, our VARGPT model demon-
-              strates significant superiority over the compared baselines across
-              all comprehension benchmarks. Furthermore, it exhibits excep-
-              tional instruction-to-image generation capabilities, thus enhancing
-              its versatility and applicability in diverse visual-linguistic tasks.
+              A comparative analysis of various MLLMs across multiple visual comprehension
+              and generation benchmarks is presented. The CLIP-scores is employed as a text-to-image visual generation
+              metric, while the remaining metrics are derived from standard visual question-answering benchmarks and
+              multi-modal comprehension benchmarks. Notably, our VARGPT model demonstrates significant superiority over
+              the compared baselines across all comprehension benchmarks. Furthermore, it exhibits exceptional
+              instruction-to-image generation capabilities, thus enhancing its versatility and applicability in diverse
+              visual-linguistic tasks.
             </p>
           </div>
           <div class="columns is-vcentered interpolation-panel">
@@ -169,9 +185,8 @@
           <h3 class="title is-4">Generated samples</h3>
           <div class="content has-text-justified">
             <p>
-              Some generated 256×256 samples by VARGPT trained on ImageNet-1K. VARGPT supports text-and-image
-              instructions from
-              user and outputs both text-and-image mixed modal data simultaneously.
+              Some generated 256*256 samples by VARGPT trained on ImageNet. VARGPT supports text-and-image instructions
+              from user and outputs both text-and-image mixed modal data simultaneously.
             </p>
           </div>
           <div class="columns is-vcentered interpolation-panel">
@@ -199,18 +214,18 @@
             <p>
               We present VARGPT, a novel multimodal large language model (MLLM) that unifies visual understanding and
               generation within a single autoregressive framework. VARGPT employs a next-token prediction paradigm for
-              visual understanding and a next-scale prediction paradigm for visual autoregressive generation. Building
-              upon the LLaVA architecture, VARGPT incorporates a visual decoder and a multi-scale image tokenizer, along
-              with two feature projectors for efficiently extending MLLMs to visual autoregressive generation and
-              inherently support mixed-modal input and output.
-              Our VARGPT undergoes a three-stage unified training process on three specially curated datasets,
-              encompassing a pre-training phase and two mixed visual instruction fine-tuning phases.
+              visual understanding and a next-scale prediction paradigm for visual autoregressive generation. VARGPT
+              innovatively extends the LLaVA architecture, achieving efficient scale-wise autoregressive visual
+              generation within MLLMs while seamlessly accommodating mixed-modal input and output within a single model
+              framework.
+              Our VARGPT undergoes a three-stage unified training process on specially curated datasets, comprising a
+              pre-training phase and two mixed visual instruction-tuning phases.
               The unified training strategy are designed to achieve alignment between visual and textual features,
               enhance instruction following for both understanding and generation, and improve visual generation
               quality, respectively.
               Despite its LLAVA-based architecture for multimodel understanding, VARGPT significantly outperforms
-              LLaVA-1.5 on various vision-centric benchmarks, such as visual question-answering and reasoning tasks.
-              Notably, VARGPT also demonstrates remarkable capabilities in visual autoregressive generation and
+              LLaVA-1.5 across various vision-centric benchmarks, such as visual question-answering and reasoning tasks.
+              Notably, VARGPT naturally supports capabilities in autoregressive visual generation and
               instruction-to-image synthesis, showcasing its versatility in both visual understanding and generation
               tasks.
             </p>
@@ -224,8 +239,9 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Video</h2>
           <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            <iframe src="https://www.youtube.com/watch?v=CO5fzwJ_B3k" frameborder="0" allow="autoplay; encrypted-media"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -248,12 +264,9 @@
           <div class="content has-text-justified">
             <p>
               The illustration of the proposed VARGPT framework, which consists of (1) a large language model, visual
-              encoder and a
-              understanding projector for visual understanding; (2) a visual decoder and dual generation projectors for
-              visual generation. VARGPT
-              employs the employs causal attention in the Large Language Model (LLM) backbone, while utilizing chunked
-              causal attention in the visual
-              decoder.
+              encoder and a understanding projector for visual understanding; (2) a visual decoder and dual generation
+              projectors for visual generation. VARGPT employs the causal attention in the LLM backbone, while utilizing
+              block causal attention in the visual decoder.
             </p>
           </div>
           <div class="columns is-vcentered interpolation-panel">
@@ -290,24 +303,25 @@
         <div class="column is-full-width">
           <h2 class="title is-3">Data</h2>
 
-          <!-- Interpolating. -->
-          <h3 class="title is-4">Data proportion in the three training stages.</h3>
+          <div class="content has-text-justified">
+            <p>
+              We present the data distribution we constructed and collected, encompassing: (a) the proportional
+              breakdown
+              of data across the three training stages; and (b) the distribution of mixed instruction data employed
+              during
+              the instruction fine-tuning phase in the second stage. Our composite dataset for stage-2 training is
+              derived
+              from LLaVA-1.5, LLaVA-OneVision, and ImageNet-Instruct-130K.
+            </p>
+          </div>
           <div class="columns is-vcentered interpolation-panel">
-            <img src="./static/vargpt_images/PieChart2.jpg" class="interpolation-image"
+            <img src="./static/vargpt_images/PieChart_all.jpg" class="interpolation-image-2"
               alt="Interpolate start reference image." />
           </div>
+          <!--/ Interpolating. -->
 
-          <h3 class="title is-4">Data distribution of the mixed instruction fine-tuning dataset.</h3>
-          <div class="columns is-vcentered interpolation-panel">
-            <img src="./static/vargpt_images/PieChart.jpg" class="interpolation-image"
-              alt="Interpolate start reference image." />
-          </div>
         </div>
-        <br />
-        <!--/ Interpolating. -->
-
       </div>
-    </div>
     </div>
   </section>
 
@@ -325,7 +339,7 @@
           <div class="content has-text-justified">
             <p>
               Zero-shot multi-modal evaluation on multi-modal benchmarks including MMMU, MME, MMBench, SEEDBench, and
-              POPE (including different settings random, popular and adversarial ). The overall scores are reported for
+              POPE (including different settings random, popular and adversarial). The overall scores are reported for
               evaluation and we report test results for MMBench. Gen represents whether the method supports image
               generation capability. VARGPT achieves the best overall performance.
             </p>
@@ -387,7 +401,7 @@
           <h3 class="title is-4">Generated samples</h3>
           <div class="content has-text-justified">
             <p>
-              Some generated 256×256 samples by VARGPT trained on ImageNet-1K. VARGPT supports user text command input
+              Some generated 256×256 samples by VARGPT trained on ImageNet. VARGPT supports user text command input
               and
               outputs both text and image modal data simultaneously.
             </p>
