@@ -44,6 +44,33 @@ body {
   object-fit: fit;
 }
 
+
+/* 为 Code 链接添加高亮样式 */
+.code-highlight {
+  background-color: #ffeb3b; /* 黄色背景 */
+  color: #000; /* 黑色文字 */
+  border: 2px solid #ffc107; /* 橙色边框 */
+  padding: 5px 10px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+}
+
+.code-highlight:hover {
+  background-color: #ffc107; /* 鼠标悬停时背景颜色变化 */
+  color: #000; /* 保持黑色文字 */
+}
+/* 选择包含 "Code" 文本的链接 */
+.link-block:has(span:contains("Code")) .external-link {
+  background-color: #ffeb3b; /* 黄色背景 */
+  color: #000; /* 黑色文字 */
+  border: 2px solid #ffc107; /* 橙色边框 */
+  padding: 5px 10px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+}
+
+.link-block:has(span:contains("Code")) .external-link:hover {
+  background-color: #ffc107; /* 鼠标悬停时背景颜色变化 */
+  color: #000; /* 保持黑色文字 */
+}
 .publication-header .hero-body {
 }
 
@@ -81,7 +108,10 @@ body {
 .author-block {
   display: inline-block;
 }
-
+/* 为 code-highlight 类添加红色样式 */
+.code-highlight {
+  color: red; /* 红色文字 */
+}
 .publication-banner img {
 }
 
